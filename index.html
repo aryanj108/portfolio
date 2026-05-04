@@ -430,9 +430,135 @@
       color: var(--navy);
       background: var(--white);
     }
+        /* EXPERIENCE PAGE */
+    #page-experience {
+      padding-top: 52px;
+      background: #f6f8fb;
+      min-height: 100vh;
+    }
+    .exp-header {
+      text-align: center;
+      padding: 56px 24px 64px;
+      background: #f6f8fb;
+    }
+    .exp-header .exp-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .exp-header h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .exp-header p {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .timeline-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .tl-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0 28px;
+    }
+    .tl-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .tl-icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 0.5px dashed var(--border);
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      flex-shrink: 0;
+    }
+    .tl-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--navy);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+    .tl-date {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+    .tl-line {
+      width: 1px;
+      flex: 1;
+      background: var(--border);
+      min-height: 32px;
+      margin-top: 6px;
+    }
+    .tl-card {
+      background: var(--white);
+      border: 0.5px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-top: 10px;
+      margin-bottom: 32px;
+    }
+    .tl-card h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .tl-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: #4a6a9a;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .tl-bullets { list-style: none; padding: 0; }
+    .tl-bullets li {
+      font-size: 13px;
+      font-weight: 300;
+      color: #3a4a6b;
+      line-height: 1.65;
+      padding: 3px 0 3px 18px;
+      position: relative;
+      text-align: center;
+    }
+    .tl-bullets li::before {
+      content: '\2022';
+      position: absolute;
+      left: 4px;
+      color: var(--navy);
+    }
   </style>
 </head>
 <body>
+
 
   <!-- NAV -->
   <nav>
@@ -442,6 +568,7 @@
       <a onclick="showPage('portfolio')">Portfolio</a>
       <a onclick="showPage('experience')">Experience</a>
       <a onclick="showPage('volleyball')">Volleyball</a>
+      <a onclick="showPage('contact')">Contact</a>
     </div>
   </nav>
 
@@ -634,13 +761,98 @@
 
   </div>
 
-  <!-- EXPERIENCE (placeholder) -->
+  <!-- EXPERIENCE -->
   <div class="page" id="page-experience">
-    <div class="coming-soon">
-      <h2>Experience</h2>
-      <p>Coming soon</p>
+ 
+    <div class="exp-header">
+      <span class="exp-label">Professional Experience</span>
+      <h1>Career Timeline</h1>
+      <p>A bottom-to-top timeline of my internship and research experience, highlighting the systems, teams, and outcomes that shaped my growth.</p>
+    </div>
+ 
+    <div class="timeline-wrap">
+ 
+      <!-- Intuitive Surgical -->
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-icon-circle">&#x1F916;</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+          <div class="tl-date">May 2026 &ndash;<br>August 2026</div>
+        </div>
+        <div>
+          <div class="tl-card">
+            <h3>Intuitive Surgical</h3>
+            <div class="tl-role">Incoming Fullstack Software Engineering Intern</div>
+            <ul class="tl-bullets">
+              <li>Incoming fullstack software engineering intern working on medical robotics software in Sunnyvale, CA.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- DTCC -->
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-icon-circle">&#x1F3E6;</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+          <div class="tl-date">June 2025 &ndash;<br>August 2025</div>
+        </div>
+        <div>
+          <div class="tl-card">
+            <h3>Depository Trust &amp; Clearing Corporation</h3>
+            <div class="tl-role">Software Engineering Intern</div>
+            <ul class="tl-bullets">
+              <li>Engineered a scalable automated Python pipeline to extract and validate multi-page audit reports, processing 1,000+ pages per hour and saving 10&ndash;15 hours per week.</li>
+              <li>Built a system-level Python automation tool capturing low-level mouse and keyboard events to auto-generate workflow documentation, cutting per-process documentation time by 50&ndash;60%.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- UT ML Research -->
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-icon-circle">&#x1F9E0;</div>
+          <div class="tl-dot"></div>
+          <div class="tl-line"></div>
+          <div class="tl-date">August 2025 &ndash;<br>Present</div>
+        </div>
+        <div>
+          <div class="tl-card">
+            <h3>UT Austin &mdash; ML Research</h3>
+            <div class="tl-role">Research Software Engineer</div>
+            <ul class="tl-bullets">
+              <li>Designed a distributed, low-latency multimodal data pipeline reducing ML training time by 45%, converting geospatial inputs into optimized HDF5 feature stores for production-ready AI workflows.</li>
+              <li>Implemented end-to-end ML pipelines from training to inference using PyTorch and NumPy, transforming urban audio data into visual representations for noise pollution analysis.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- UT CV Research -->
+      <div class="tl-row">
+        <div class="tl-left">
+          <div class="tl-icon-circle">&#x1F4F7;</div>
+          <div class="tl-dot"></div>
+          <div class="tl-date">August 2024 &ndash;<br>Present</div>
+        </div>
+        <div>
+          <div class="tl-card">
+            <h3>UT Austin &mdash; CV Research</h3>
+            <div class="tl-role">Research Software Engineer</div>
+            <ul class="tl-bullets">
+              <li>Designed and evaluated real-time modular computer vision systems using PyTorch, YOLOv8, and OpenCV, enabling low-latency vehicle detection and configurable inference for campus traffic.</li>
+              <li>Validated production-level model performance (0.85+ mAP, high-80s precision/recall) through systematic training and evaluation workflows ensuring scalable AI-based traffic analysis.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+ 
     </div>
   </div>
+
 
   <!-- VOLLEYBALL (placeholder) -->
   <div class="page" id="page-volleyball">
@@ -650,12 +862,20 @@
     </div>
   </div>
 
+    <!-- CONTACT (placeholder) -->
+  <div class="page" id="page-contact">
+    <div class="coming-soon">
+      <h2>Contact</h2>
+      <p>Coming soon</p>
+    </div>
+  </div>
+
   <script>
     function showPage(name) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
       document.getElementById('page-' + name).classList.add('active');
-      const map = { home: 0, portfolio: 1, experience: 2, volleyball: 3 };
+      const map = { home: 0, portfolio: 1, experience: 2, volleyball: 3, contact: 4};
       document.querySelectorAll('.nav-links a')[map[name]].classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
