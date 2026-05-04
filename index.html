@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aryan Jalota</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2340;
+      --muted: #8492a6;
+      --border: #e4e8f0;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 48px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .nav-brand {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--navy);
+      text-decoration: none;
+      cursor: pointer;
+      padding-bottom: 2px;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      border-bottom-color: var(--navy);
+    }
+
+    /* ── PAGE SYSTEM ── */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ── HOME PAGE ── */
+    #page-home {
+      padding-top: 52px;
+    }
+
+    /* White hero text block */
+    .home-title-block {
+      background: var(--white);
+      text-align: center;
+      padding: 72px 24px 64px;
+    }
+
+    .home-title-block h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .home-title-block p {
+      margin-top: 14px;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.01em;
+    }
+
+    /* Full-width image section with card overlay */
+    .home-hero-image {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      overflow: hidden;
+    }
+
+    .home-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .hero-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(160deg, #c9d8e8 0%, #9ab4cc 40%, #7090aa 100%);
+    }
+
+    .hero-placeholder svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Frosted About Me card */
+    .about-card {
+      position: absolute;
+      bottom: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(580px, 90%);
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 20px;
+      padding: 40px 44px;
+      box-shadow: 0 2px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .about-card h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .about-card p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #2e3d55;
+    }
+
+    /* ── PLACEHOLDER PAGES ── */
+    .coming-soon {
+      padding-top: 52px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      background: #f6f8fb;
+    }
+    .coming-soon h2 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 32px;
+      color: var(--navy);
+    }
+    .coming-soon p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-brand" onclick="showPage('home')">Aryan Jalota</a>
+    <div class="nav-links">
+      <a class="active" onclick="showPage('home')">Home</a>
+      <a onclick="showPage('portfolio')">Portfolio</a>
+      <a onclick="showPage('experience')">Experience</a>
+      <a onclick="showPage('volleyball')">Volleyball</a>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <div class="page active" id="page-home">
+
+    <div class="home-title-block">
+      <h1>Aryan Jalota</h1>
+      <p>Computer Science &amp; Statistics Student at The University of Texas at Austin</p>
+    </div>
+
+    <div class="home-hero-image">
+      <!--
+        TO ADD YOUR OWN PHOTO:
+        Replace the <div class="hero-placeholder"> block with:
+        <img src="your-photo.jpg" alt="Background photo" />
+      -->
+      <div class="hero-placeholder">
+        <svg viewBox="0 0 1440 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="0,520 0,340 220,160 440,300 620,140 820,310 1020,150 1220,300 1440,180 1440,520" fill="rgba(255,255,255,0.06)"/>
+          <polygon points="0,520 0,400 180,260 380,380 560,240 760,370 960,230 1160,360 1360,240 1440,290 1440,520" fill="rgba(255,255,255,0.08)"/>
+          <polygon points="0,520 0,460 160,360 340,440 520,340 700,430 900,330 1100,420 1300,340 1440,390 1440,520" fill="rgba(255,255,255,0.1)"/>
+        </svg>
+      </div>
+
+      <div class="about-card">
+        <h2>About Me</h2>
+        <p>
+          I'm a Computer Science and Statistics student at The University of Texas at Austin
+          with a strong interest in software engineering, machine learning, and building technology
+          that has real-world impact. I enjoy working across the stack — from distributed ML
+          pipelines and computer vision systems to full-stack web and mobile applications —
+          and I'm always looking for opportunities to learn, build, and grow as an engineer.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PORTFOLIO (placeholder) -->
+  <div class="page" id="page-portfolio">
+    <div class="coming-soon">
+      <h2>Portfolio</h2>
+      <p>Coming soon</p>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE (placeholder) -->
+  <div class="page" id="page-experience">
+    <div class="coming-soon">
+      <h2>Experience</h2>
+      <p>Coming soon</p>
+    </div>
+  </div>
+
+  <!-- VOLLEYBALL (placeholder) -->
+  <div class="page" id="page-volleyball">
+    <div class="coming-soon">
+      <h2>Volleyball</h2>
+      <p>Coming soon</p>
+    </div>
+  </div>
+
+  <script>
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      document.getElementById('page-' + name).classList.add('active');
+      const map = { home: 0, portfolio: 1, experience: 2, volleyball: 3 };
+      document.querySelectorAll('.nav-links a')[map[name]].classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
