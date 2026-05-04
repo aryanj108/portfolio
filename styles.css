@@ -140,35 +140,46 @@ section {
    BUTTONS
    ═══════════════════════════════════════════════════════════════════════════════ */
 .btn-primary {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   color: #fff;
-  background: var(--green);
-  padding: 10px 20px;
-  border-radius: 6px;
+  background: #3a5a3a; /* Darker forest green */
+  padding: 12px 24px;
+  border-radius: 8px;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 7px;
-  transition: background 0.15s;
+  gap: 10px;
+  transition: opacity 0.2s ease;
 }
-.btn-primary:hover { background: var(--green-light); }
+.btn-primary:hover { opacity: 0.9; }
 
 .btn-secondary {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text);
-  background: transparent;
-  border: 0.5px solid var(--border);
-  padding: 10px 20px;
-  border-radius: 6px;
+  background: #f8f7f3; /* Very light off-white */
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 12px 24px;
+  border-radius: 8px;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.btn-secondary:hover { 
+  background: #f0efe9;
+  border-color: rgba(0,0,0,0.2);
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
   display: flex;
   align-items: center;
-  gap: 7px;
-  transition: background 0.15s;
+  justify-content: center;
 }
-.btn-secondary:hover { background: var(--cream2); }
 
 /* ═══════════════════════════════════════════════════════════════════════════════
    HERO / ABOUT SECTION
